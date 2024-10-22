@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/users.css">
+    <title>Sign In | Sign Up</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" /> <!-- Insira o caminho da sua imagem aqui -->
+        </div>
+        <h1>Projeto Blog</h1>
+        <nav>
+            <ul>
+                <!-- <li><a href="{{ url_for('users.users') }}">Entrar/Cadastro</a></li> -->
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+  <h1 class="entrar">Cadastro | Entrar</h1>
+    
+    <form action="" method="post">
+      <div class="form-content">
+        <div class="radio-group">
+            <label class="radio-option">
+                <input type="radio" name="check" value="Cadastro" onclick="toggleFields()">
+                <span class="radio-label">Cadastro</span>
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="check" value="Login" onclick="toggleFields()">
+                <span class="radio-label">Entrar</span>
+            </label>
+        </div>
+
+        <div class="input-group">
+          <label for="name" id="lab_nome">Nome</label>
+          <input type="text" id="name" name="name" placeholder="Digite seu nome">
+          
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Digite seu username">
+          
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha">                
+        </div>
+      </div>
+          
+      <input type="checkbox" name="admin" id="admin" value="admin">
+      <label for="admin" id="lab_admin">Conta admin ou autor</label>
+
+      <input type="submit" value="Cadastrar" id="enviar">
+      <!-- <input type="submit" value="Entrar"> -->
+    </form>
+
+    <a href="{{ url_for('rota.index') }}" class="voltar">Voltar</a>
+
+    <script>
+        function toggleFields() {
+            const nameField = document.getElementById('name');
+            const labNome = document.getElementById('lab_nome')
+            const adminCheckbox = document.getElementById('admin');
+            const labAdmin = document.getElementById('lab_admin')
+            const isLoginSelected = document.querySelector('input[name="check"]:checked').value === 'Login';
+            const btnEnviar = document.getElementById('enviar')
+
+            if (isLoginSelected) {
+                nameField.style.display = 'none'; // Esconde o campo nome
+                labNome.style.display = 'none';
+                adminCheckbox.style.display = 'none'; // Esconde o checkbox
+                labAdmin.style.display = 'none';
+                btnEnviar.value = 'Entrar'
+            } else {
+                nameField.style.display = 'block'; // Mostra o campo nome
+                labNome.style.display = 'block';
+                adminCheckbox.style.display = 'inline'; // Mostra o checkbox
+                labAdmin.style.display = 'inline';
+                btnEnviar.value = 'Cadastrar'
+            }
+        }
+    </script>
+</body>
+</html>

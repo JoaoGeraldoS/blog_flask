@@ -1,0 +1,229 @@
+/* Definições globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px; /* Diminuindo o padding */
+    /* margin: 0 0 30px 0; */
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    align-items: center; 
+}
+
+.logo {
+    flex: 0 0 auto; /* Não faz a logo crescer ou encolher */
+    margin-right: 20px; /* Espaço entre a logo e o título */
+}
+
+.logo img {
+    height: 50px; /* Ajuste a altura da logo conforme necessário */
+}
+
+header h1 {
+    font-size: 1.8em; /* Diminuindo o tamanho do título */
+    flex: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: center; /* Centraliza o texto */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /*Mudando para flexbox*/
+}
+
+nav ul li {
+    margin-left: 15px; /* Margem à esquerda entre os itens */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em; /* Ajustando o tamanho do texto */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e1e1e1;
+}
+
+
+/* Estilo principal */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+}
+
+/* Estilo de erro */
+.erro {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Estilo para a imagem do post */
+.imagem-post {
+    width: 100%;
+    max-width: 700px; /* Limite de largura, como em sites de blogs */
+    height: auto; /* Proporção mantida */
+    margin: 20px auto; /* Espaçamento entre o título e o conteúdo */
+    border-radius: 12px; /* Bordas arredondadas para um visual mais moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a imagem */
+    display: block;
+    object-fit: cover; /* Para garantir que a imagem seja exibida corretamente */
+}
+
+/* Estilo para os posts */
+.post {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+}
+
+.post h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #303030;
+}
+
+.strong {
+    font-weight: 600;
+    color: black;
+}
+
+
+.post p {
+    margin-top: 5px;
+    font-size: 1.1em;
+    
+}
+
+.post time {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Estilo para os comentários */
+/* .comentario {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f5ff;
+    border-left: 4px solid #007bff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+} */
+
+.separa_coemnt {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f5ff;
+    border-left: 4px solid #007bff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Adicionando espaçamento entre os elementos */
+.post, .comentario {
+    margin-bottom: 25px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .post h2 {
+        font-size: 1.6em;
+    }
+
+    .post p {
+        font-size: 1em;
+    }
+
+    .comentario {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .post h2 {
+        font-size: 1.4em;
+    }
+
+    .post p {
+        font-size: 0.9em;
+    }
+
+    .comentario {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+
+}

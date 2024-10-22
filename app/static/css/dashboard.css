@@ -1,0 +1,233 @@
+/* Definições globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    /* padding: 20px; */
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ajusta para telas pequenas */
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    flex: 1;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Para ajustar bem em telas menores */
+    justify-content: flex-end; /* Mantém os links à direita */
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e1e1e1;
+}
+
+.imagem-post {
+    width: 100%;
+    max-width: 700px; /* Limite de largura, como em sites de blogs */
+    height: auto; /* Proporção mantida */
+    margin: 20px 0; /* Espaçamento entre o título e o conteúdo */
+    border-radius: 12px; /* Bordas arredondadas para um visual mais moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a imagem */
+    display: block;
+    object-fit: cover; /* Para garantir que a imagem seja exibida corretamente */
+}
+
+/* Responsividade para o cabeçalho */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 10px;
+    }
+}
+
+/* Container principal */
+.container {
+    margin: 20px auto;
+    width: 80vw;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90vw;
+    }
+}
+
+/* Estilos gerais */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+/* Estilos do formulário */
+form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Estilizando os posts */
+.post {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.post > div {
+    margin-bottom: 8px;
+}
+
+/* Estilos dos comentários */
+.comentario {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Botões e links */
+a, .enviar {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+a:hover, .enviar:hover {
+    background-color: #218838;
+}
+
+.enviar {
+    border: none;
+}
+
+.add {
+    margin-top: 20px;
+}
+
+/* Estilo para apagar e atualizar */
+.apagar, .atualizar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.apagar input[type="submit"], .atualizar input[type="submit"] {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.atualizar input[type="submit"] {
+    background-color: #007bff;
+}
+
+.apagar input[type="submit"]:hover, .atualizar input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Responsividade geral */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 95vw;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    .apagar input[type="submit"], .atualizar input[type="submit"], a, .enviar {
+        padding: 8px 12px;
+    }
+}

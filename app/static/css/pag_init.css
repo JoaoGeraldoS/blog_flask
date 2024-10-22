@@ -1,0 +1,326 @@
+/* Definições globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px; /* Diminuindo o padding */
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    align-items: center; 
+}
+
+.logo {
+    flex: 0 0 auto; /* Não faz a logo crescer ou encolher */
+    margin-right: 20px; /* Espaço entre a logo e o título */
+}
+
+.logo img {
+    height: 50px; /* Ajuste a altura da logo conforme necessário */
+}
+
+header h1 {
+    font-size: 1.8em; /* Diminuindo o tamanho do título */
+    flex: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: center; /* Centraliza o texto */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /*Mudando para flexbox*/
+}
+
+nav ul li {
+    margin-left: 15px; /* Margem à esquerda entre os itens */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em; /* Ajustando o tamanho do texto */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e1e1e1;
+}
+
+.titulo {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 25px auto;
+}
+
+/* Mensagem de erro */
+.erro {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Estilo para a imagem do post */
+.imagem-post {
+    width: 100%;
+    max-width: 700px; /* Limite de largura, como em sites de blogs */
+    height: auto; /* Proporção mantida */
+    margin: 20px auto; /* Espaçamento entre o título e o conteúdo */
+    border-radius: 12px; /* Bordas arredondadas para um visual mais moderno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a imagem */
+    display: block;
+    object-fit: cover; /* Para garantir que a imagem seja exibida corretamente */
+}
+
+/* Estilo para o ícone de lixeira */
+.btn-lixeira {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff4d4d;
+    font-size: 1.2em;
+    margin-left: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.btn-lixeira:hover {
+    color: #e63946;
+}
+
+.btn-lixeira i {
+    pointer-events: none; /* Isso garante que o ícone não seja clicável separadamente */
+}
+
+
+/* Estilo para os posts */
+.post {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+}
+
+/* .post:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-5px);
+} */
+
+.post h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #303030;
+}
+
+.strong {
+    font-weight: 600;
+    color: black;
+}
+
+.post p {
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.post time {
+    /* display: inline; */
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Estilo para os comentários */
+.comentario {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f5ff;
+    border-left: 4px solid #007bff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* .comentario .apagar {
+    margin-bottom: 10px;
+} */
+
+.comentario input[type="submit"] {
+    padding: 7px 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.comentario input[type="submit"]:hover {
+    background-color: #e63946;
+}
+
+/* Textarea para comentários */
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f8f9fa;
+}
+
+/* Botões */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Links e botões gerais */
+a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    /* margin-top: 20px; */
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Adicionando espaçamento entre os elementos */
+.post, .comentario {
+    margin-bottom: 25px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .post h2 {
+        font-size: 1.6em;
+    }
+
+    .post p {
+        font-size: 1em;
+    }
+
+    input[type="submit"],
+    a {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    textarea {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .comentario {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Responsividade para dispositivos muito pequenos (ex: smartphones antigos) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .post h2 {
+        font-size: 1.4em;
+    }
+
+    .post p {
+        font-size: 0.9em;
+    }
+
+    input[type="submit"],
+    a {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+
+    textarea {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    .comentario {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+}

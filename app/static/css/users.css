@@ -1,0 +1,206 @@
+/* Definições globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column; 
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 100vh; 
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px; /* Diminuindo o padding */
+    /* margin: 0 0 30px 0; */
+    display: flex;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    align-items: center; 
+}
+
+.logo {
+    flex: 0 0 auto; /* Não faz a logo crescer ou encolher */
+    margin-right: 20px; /* Espaço entre a logo e o título */
+}
+
+.logo img {
+    height: 50px; /* Ajuste a altura da logo conforme necessário */
+}
+
+header h1 {
+    font-size: 1.8em; /* Diminuindo o tamanho do título */
+    flex: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: center; /* Centraliza o texto */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /*Mudando para flexbox*/
+}
+
+nav ul li {
+    margin-left: 15px; /* Margem à esquerda entre os itens */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em; /* Ajustando o tamanho do texto */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e1e1e1;
+}
+
+.entrar {
+    margin: auto;
+}
+
+/* Estilo do cabeçalho */
+/* h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #007bff;
+} */
+
+/* Estilo do formulário */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Largura máxima do formulário */
+    margin: auto;
+}
+
+
+.radio-group {
+    width: 300px; /* Mesma largura para os dois grupos */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+  }
+
+.radio-option input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .radio-option input[type="radio"]:checked + .radio-label {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .radio-option input[type="radio"]:focus + .radio-label {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
+  
+/* Estilo dos inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1em;
+    background-color: #f8f9fa; /* Fundo claro para os inputs */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilo do checkbox */
+label[for="admin"] {
+    display: inline-block;
+    margin: 10px 10px 10px 5px;
+    font-weight: normal;
+}
+
+/* Estilo do botão de envio */
+input[type="submit"] {
+    display: block;
+    margin: 5px auto 0;
+    padding: 10px 15px;
+    background-color: #28a745; /* Verde do estilo anterior */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838; /* Tom mais escuro de verde */
+}
+
+
+/* Links e botões gerais */
+a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+.voltar {
+    margin: auto;
+    /* display: block; */
+    width: 80px;
+}
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

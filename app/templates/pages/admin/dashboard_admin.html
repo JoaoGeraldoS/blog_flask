@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../static/css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" /> <!-- Insira o caminho da sua imagem aqui -->
+        </div>
+        <h1>Projeto Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('users.logout') }}">Sair</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Pagina admin</h1>
+        <h1>Olá {{nome}}</h1>
+
+        <div>Conteúdo</div>
+
+        {% if not postagem %}
+            <div class="erro">Erro, não existe dados</div>
+        {% else %}
+        
+            {% for post in postagem %}
+                <div class="post">
+                    <form action="{{ url_for('admin.delete_post') }}"  method="post">
+                        <div class="apagar">
+                            <input type="hidden" name="post_id" value="{{ post.id }}">
+                            <input type="checkbox" name="post_ids_del" value="{{ post.id }}">
+                            <input type="submit" value="Apagar">
+                        </div>
+                    </form>
+                    
+                    <form action="{{ url_for('admin.dashboard') }}" method="post">
+                        <div class="atualizar">
+                            <input type="hidden" name="post_id" value="{{ post.id }}">
+                            <input type="checkbox" name="post_ids_up" value="{{ post.id }}">
+                            <input type="submit" value="Atualizar" name="update">
+                        </div>
+                    </form>
+
+                    <div><strong>Título:</strong> {{ post.titulo }}</div>
+
+                    {% if post.imagem_url %}
+                        <img src="{{ post.imagem_url }}" alt="" class="imagem-post">
+                        
+                    {% endif %}
+                        
+                    <div><strong>Conteúdo:</strong> {{ post.conteudo }}</div>
+                    <div><strong>Data:</strong> {{ post.data_postagem }}</div>
+                    <div><strong>Autor:</strong> {{ post.autor }}</div>
+
+                    {% if not coments %}
+                        <div class="erro">Não existe comentário</div>
+                    {% else %}
+                        {% for coment in coments %}
+                            {% if coment.post_id == post.id %}
+                                <div class="comentario">
+                                    <form action="{{ url_for('admin.delete_coment') }}" method="post">
+                                
+                                        <div class="apagar">
+                                            <input type="hidden" name="coment_id" value="{{coment.id}}">
+                                            <input type="checkbox" name="coment_ids_del" value="{{ coment.id }}">
+                                            <input type="submit" value="Apagar">
+                                        </div>
+                                    </form>
+
+                                    <div>Usuário: {{ coment.nome }}</div>
+                                    <div>Comentário: {{ coment.comentario }}</div>
+                                    <div>Data: {{ coment.data_comment }}</div>
+                                </div>
+                            {% endif %}                       
+                        {% endfor %}
+                    {% endif %}
+                    <form action="{{ url_for('admin.add_coment') }}" method="post">
+                            <input type="hidden" name="post_id" value="{{ post.id }}">
+                            <textarea name="coment_entrada" id="" placeholder="Escreva seu comentario.."></textarea>
+                            <input type="submit" value="Enviar" name="enviar" class="enviar">
+                    </form>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <a href="{{ url_for('admin.create') }}" class="add">Adicionar</a>
+    </main>
+
+</body>
+</html>
